@@ -46,12 +46,6 @@ for station in knmi.stations.keys():
         except:
             pass
 
-data = knmi.get_day_data_dataframe(stations = [331], start = dt.datetime(1963,1,1))
-data = data.dropna(0, subset=['FHX', 'FXX'])
-data['FHX'] = data['FHX']*0.1
-data['FXX'] = data['FXX']*0.1
-
-
 
 rtdf['Station_'] = rtdf['Station_'].astype(int)
 rtdf['RT'] = rtdf['RT'].astype(int)
