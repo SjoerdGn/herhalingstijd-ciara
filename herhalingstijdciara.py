@@ -16,7 +16,7 @@ from sklearn.metrics import mean_squared_error
 from fit_functions import optimal_function
 import numpy as np
 
-rtdf = pd.DataFrame(columns=['Station_', 'RT', 'RTH'])
+rtdf = pd.DataFrame(columns=['Station_', 'longitude', 'latitude', 'RT', 'RTH'])
 
 
 for station in knmi.stations.keys():
@@ -45,8 +45,8 @@ for station in knmi.stations.keys():
         if returntime > 0 and returntime<1000000 and len(data['FXX'][data['FXX']>=0])>10*365:
             if returntimeh > 0 and returntimeh<1000000 and len(data['FHX'][data['FHX']>=0])>10*365:
            
-                rtdf = rtdf.append({'Station_':int(station), 'RT':returntime, 'RTH':returntimeh},ignore_index=True)
-
+                rtdf = rtdf.append({'Station_':int(station), 'longitude':knmi.stations[station].longitude,
+                                    'latitude':knmi.stations[station].latitude,'RT':returntime, 'RTH':returntimeh},ignore_index=True)
 
 
 rtdf['Station_'] = rtdf['Station_'].astype(int)
