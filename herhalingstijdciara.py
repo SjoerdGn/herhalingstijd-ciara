@@ -11,6 +11,7 @@ from statsmodels.distributions.empirical_distribution import ECDF
 
 import knmi
 
+from ev_distributions import gumbel_cdf, weibull_cdf
 
 rtdf = pd.DataFrame(columns=['Station_', 'RT', 'RTH'])
 
@@ -47,7 +48,12 @@ for station in knmi.stations.keys():
             pass
 
 
+    
+    
+
 rtdf['Station_'] = rtdf['Station_'].astype(int)
 rtdf['RT'] = rtdf['RT'].astype(int)
 rtdf['RTH'] = rtdf['RTH'].astype(int)
 #rtdf.to_csv(save_path, index=False)
+
+
