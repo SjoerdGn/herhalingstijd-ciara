@@ -78,5 +78,5 @@ def get_repetition_times_knmi(dates, pref = None):
 if __name__ == "__main__":
     dates = [dt.datetime(2020, 2,9), dt.datetime(2020, 2,10)]
     rtdf = get_repetition_times_knmi(dates, pref = 'gumbel')
-    #rtdf.to_csv("../data/herhalingstijd-ciara.csv", index=False)
+    rtdf.to_csv("../data/herhalingstijd-ciara.csv", index=False)
 
